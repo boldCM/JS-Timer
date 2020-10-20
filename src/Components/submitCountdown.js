@@ -2,7 +2,9 @@ import { createElement } from "../../Utils/element";
 import { createInputNumber } from "./inputNumber";
 
 export const createSubmitCountdown = () => {
-  const outputField = createElement("div", {});
+  const outputField = createElement("div", {
+    className: "outputField",
+  });
   const submitButton = createElement("button", {
     className: "submitButton",
     innerText: "Start Countdown",
@@ -14,6 +16,7 @@ export const createSubmitCountdown = () => {
     },
   });
   const submitContainer = createElement("div", {
+    className: "submitContainer",
     children: [submitButton, outputField],
   });
 
