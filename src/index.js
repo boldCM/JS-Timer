@@ -1,4 +1,3 @@
-import _ from "lodash";
 import "./style.css";
 import { createInputNumber } from "../src/Components/inputNumber";
 //import Icon/IMg...
@@ -10,7 +9,6 @@ function component() {
   //   const btn = document.createElement('button');
 
   // Lodash, now imported by this script
-  element.innerHTML = _.join(["Hello", "webpack"], " ");
   element.classList.add("hello");
   element.append(createInputNumber());
 
