@@ -1,4 +1,55 @@
-.hello {
-  color: red;
-  /* evetl hier hintergrundbilder einfügen */
+.mainContainer {
+  border: 1px solid #a99ee6;
+  display: flex;
+  /* grid-template-rows: 1fr auto 1fr auto 1fr; */
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  flex-direction: column;
+
+  background: linear-gradient(rgb(224, 172, 176), #a99ee6);
 }
+
+.inputField {
+  border-radius: 10px;
+  grid-row-start: 1;
+  text-align: center;
+  margin-top: 30px;
+  border-color: #a99ee6;
+  color: #180c52;
+}
+
+/* .inputField > value {
+  color: #180c52;
+} */
+.submitContainer {
+  margin-top: 10px;
+  border-radius: 10px;
+  /* grid-template-rows: 1fr auto 1fr; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+.submitButton {
+  margin-top: 10px;
+  border-radius: 10px;
+  grid-row-start: 0;
+  text-align: center;
+  border-color: rgb(224, 172, 176);
+  background-color: transparent;
+  color: #180c52;
+}
+
+.outputField {
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 2px solid rgb(224, 172, 176);
+  grid-row-start: 2;
+  text-align: center;
+  color: #180c52;
+}
+
+/* .outputField > value {
+  color: #180c52;
+} */
