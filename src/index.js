@@ -1,5 +1,9 @@
 import "./style.css";
 import { createInputNumber } from "../src/Components/inputNumber";
+import {
+  createSubmitButton,
+  createSubmitCountdown,
+} from "../src/Components/submitCountdown";
 //import Icon/IMg...
 import printMe from "./print";
 // für dem button unten
@@ -10,7 +14,7 @@ function component() {
 
   // Lodash, now imported by this script
   element.classList.add("hello");
-  element.append(createInputNumber());
+  element.append(createInputNumber(), createSubmitCountdown());
 
   // Add the image to our existing div.
   //  const myIcon = new Image();
