@@ -1,5 +1,4 @@
 import { createElement } from "../../Utils/element";
-import { createInputNumber } from "./inputNumber";
 
 export const createSubmitCountdown = () => {
   const outputField = createElement("div", {
@@ -12,7 +11,7 @@ export const createSubmitCountdown = () => {
     onclick: () => {
       // get the value from input and pass it to the countdown function
       const seconds = document.querySelector(".inputField").value;
-      startCountdown(seconds, outputField);
+      change(seconds);
     },
   });
   const submitContainer = createElement("div", {
@@ -23,15 +22,16 @@ export const createSubmitCountdown = () => {
   return submitContainer;
 };
 
+let interval = null;
+
 // statt seconds eingabefeld verweisen
-export const startCountdown = (seconds, outputField) => {
+export const startCountdown = (seconds) => {
   let counter = seconds;
 
   // to save my timing event function?
-  const interval = setInterval(() => {
-    console.log(counter);
+  interval = setInterval(() => {
     counter--;
-    outputField.innerText = counter;
+    document.querySelector(".outputField").innerText = counter;
     if (counter === 0) {
       clearInterval(interval);
       console.log("ding!");
@@ -39,3 +39,20 @@ export const startCountdown = (seconds, outputField) => {
     }
   }, 1000);
 };
+const pauseCountdown = () => {
+  clearInterval(interval);
+  document.querySelector(".inputField").value = document.querySelector(
+    ".outputField"
+  ).innerText;
+};
+
+function change(seconds) {
+  let btn = document.querySelector(".submitButton");
+  if (btn.innerText === "Start Countdown") {
+    btn.innerText = "Pause Countdown";
+    startCountdown(seconds);
+  } else {
+    pauseCountdown();
+    btn.innerText = "Start Countdown";
+  }
+}
