@@ -1,7 +1,6 @@
 .mainContainer {
   border: 1px solid #a99ee6;
   display: flex;
-  /* grid-template-rows: 1fr auto 1fr auto 1fr; */
   justify-content: center;
   align-items: center;
   margin: 10px;
@@ -18,13 +17,9 @@
   color: #180c52;
 }
 
-/* .inputField > value {
-  color: #180c52;
-} */
 .submitContainer {
   margin-top: 10px;
   border-radius: 10px;
-  /* grid-template-rows: 1fr auto 1fr; */
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -49,7 +44,6 @@
   margin-top: 10px;
   border-radius: 10px;
   grid-row-start: 0;
-  /* text-align: center; */
   border-color: rgb(224, 172, 176);
   background-color: transparent;
   color: #180c52;
@@ -60,7 +54,6 @@
   margin-top: 10px;
   border-radius: 10px;
   grid-row-start: 0;
-  /* text-align: center; */
   border-color: rgb(224, 172, 176);
   background-color: transparent;
   color: #180c52;
@@ -75,7 +68,3 @@
   text-align: center;
   color: #180c52;
 }
-
-/* .outputField > value {
-  color: #180c52;
-} */
