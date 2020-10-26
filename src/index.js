@@ -9,11 +9,7 @@ function component() {
     className: "mainContainer",
   });
 
-  element.append(
-    createInputNumber(),
-    createSubmitCountdown(),
-    createSubmitCountdownK()
-  );
+  element.append(createSubmitCountdown());
 
   return element;
 }
