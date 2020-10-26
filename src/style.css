@@ -40,6 +40,16 @@
   color: #180c52;
 }
 
+.stopButton {
+  margin-top: 10px;
+  border-radius: 10px;
+  grid-row-start: 0;
+  text-align: center;
+  border-color: rgb(224, 172, 176);
+  background-color: transparent;
+  color: #180c52;
+}
+
 .outputField {
   margin-top: 20px;
   border-radius: 10px;
