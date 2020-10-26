@@ -18,9 +18,9 @@ export const createSubmitCountdown = () => {
     className: "stopButton",
     innerText: "Stop",
     type: "submit",
-    onclick: () => {
-      stopCountdown(outputField);
-    },
+    // onclick: () => {
+    //   stopCountdown(outputField);
+    // },
   });
 
   const submitContainer = createElement("div", {
@@ -40,11 +40,20 @@ const startCountdown = (seconds, outputField) => {
     outputField.innerText = counter;
     if (counter === 0) {
       clearInterval(interval);
+    } else if (counter > 0) {
+      document
+        .querySelector(".stopButton")
+        .addEventListener("click", function () {
+          clearInterval(interval);
+          document.querySelector(".outputField").value = document.querySelector(
+            ".outputField"
+          ).innerText;
+        });
     }
   }, 1000);
 };
 const stopCountdown = () => {
-  clearInterval(interval);
+  // clearInterval(interval);
   // secondsLeft = secondsLeft.innerText;
   document.querySelector(".outputField").value = document.querySelector(
     ".outputField"
