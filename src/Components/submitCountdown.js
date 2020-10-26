@@ -38,11 +38,15 @@ export const createSubmitCountdown = () => {
     type: "submit",
   });
 
-  const submitContainer = createElement("div", {
-    className: "submitContainer",
-    children: [submitButton, outputField, pauseButton, resetButton],
+  const stopContainer = createElement("div", {
+    className: "stopContainer",
+    children: [pauseButton, resetButton],
   });
 
+  const submitContainer = createElement("div", {
+    className: "submitContainer",
+    children: [submitButton, outputField, stopContainer],
+  });
   return submitContainer;
 };
 

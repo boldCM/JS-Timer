@@ -30,11 +30,16 @@
   flex-direction: column;
   margin-bottom: 30px;
 }
+
+.stopContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
 .submitButton {
   margin-top: 10px;
   border-radius: 10px;
   grid-row-start: 0;
-  text-align: center;
   border-color: rgb(224, 172, 176);
   background-color: transparent;
   color: #180c52;
@@ -44,20 +49,22 @@
   margin-top: 10px;
   border-radius: 10px;
   grid-row-start: 0;
-  text-align: center;
+  /* text-align: center; */
   border-color: rgb(224, 172, 176);
   background-color: transparent;
   color: #180c52;
+  width: 80px;
 }
 
 .resetButton {
   margin-top: 10px;
   border-radius: 10px;
   grid-row-start: 0;
-  text-align: center;
+  /* text-align: center; */
   border-color: rgb(224, 172, 176);
   background-color: transparent;
   color: #180c52;
+  width: 80px;
 }
 
 .outputField {
