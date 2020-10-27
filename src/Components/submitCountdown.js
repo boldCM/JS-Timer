@@ -1,41 +1,69 @@
 import { createElement } from "../../Utils/element";
-import { createInputNumber } from "./inputNumber";
 
 export const createSubmitCountdown = () => {
-  const outputField = createElement("div", {
-    className: "outputField",
+  const outputField = createElement("input", {
+    className: "inputField",
+    type: "Number",
+    placeholder: "Enter number",
   });
   const submitButton = createElement("button", {
     className: "submitButton",
     innerText: "Start Countdown",
     type: "submit",
     onclick: () => {
-      // get the value from input and pass it to the countdown function
       const seconds = document.querySelector(".inputField").value;
       startCountdown(seconds, outputField);
     },
   });
-  const submitContainer = createElement("div", {
-    className: "submitContainer",
-    children: [submitButton, outputField],
+
+  const pauseButton = createElement("button", {
+    className: "pauseButton",
+    innerText: "Pause",
+    type: "submit",
   });
 
+  const resetButton = createElement("button", {
+    className: "resetButton",
+    innerText: "Reset",
+    type: "submit",
+  });
+
+  const stopContainer = createElement("div", {
+    className: "stopContainer",
+    children: [pauseButton, resetButton],
+  });
+
+  const submitContainer = createElement("div", {
+    className: "submitContainer",
+    children: [submitButton, outputField, stopContainer],
+  });
   return submitContainer;
 };
 
-// statt seconds eingabefeld verweisen
-export const startCountdown = (seconds, outputField) => {
-  let counter = seconds;
+const startCountdown = (seconds, outputField) => {
+  const pause = document
+    .querySelector(".pauseButton")
+    .addEventListener("click", function () {
+      clearInterval(interval);
+      outputField.value = outputField.value;
+    });
+  const reset = document
+    .querySelector(".resetButton")
+    .addEventListener("click", function () {
+      clearInterval(interval);
+      outputField.value = outputField.placeholder;
+    });
 
-  // to save my timing event function?
+  seconds++;
+  let counter = seconds;
   const interval = setInterval(() => {
     console.log(counter);
     counter--;
-    outputField.innerText = counter;
+    outputField.value = counter;
     if (counter === 0) {
       clearInterval(interval);
-      console.log("ding!");
-      alert("times over!");
+    } else if (counter > 0) {
+      pause || reset;
     }
   }, 1000);
 };

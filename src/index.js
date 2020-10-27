@@ -1,5 +1,4 @@
 import "./style.css";
-import { createInputNumber } from "../src/Components/inputNumber";
 import { createSubmitCountdown } from "../src/Components/submitCountdown";
 import { createElement } from "../Utils/element";
 
@@ -8,7 +7,7 @@ function component() {
     className: "mainContainer",
   });
 
-  element.append(createInputNumber(), createSubmitCountdown());
+  element.append(createSubmitCountdown());
 
   return element;
 }
